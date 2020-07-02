@@ -107,10 +107,10 @@ struct FilterValidator {
 
             switch filter.getTarget() {
             case .Path(_):
-                passes = filter.apply(path)
+                passes = filter.apply(path as String?)
 
             case .Function(_):
-                passes = filter.apply(function)
+                passes = filter.apply(function as String?)
 
             case .Message(_):
                 guard let message = message else {
